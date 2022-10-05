@@ -1,6 +1,6 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QMessageBox
-from dbc import Ui_MainWindow as dbcui
+from Ui_files.dbc import Ui_MainWindow as dbcui
 import sys
 import cantools
 
