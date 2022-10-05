@@ -1,6 +1,7 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 from Ui_files.dbc import Ui_MainWindow as dbcui
+from PyQt5 import QtGui
 import sys
 import cantools
 
@@ -13,7 +14,7 @@ class UIhandler():
         self.namelist = []
         self.msg = QMessageBox()
 
-    def itemselected(self, item: cantools.db.Message):
+    def messageselected(self, item: cantools.db.Message):
         message_name, id = str(item.text()).split(" ")
         row = 0
         messagesignals = self.db.get_message_by_name(message_name)
@@ -33,13 +34,17 @@ class UIhandler():
 
     def openbutton(self):
         self.path = QtWidgets.QFileDialog.getOpenFileName()
-        filename, fileext = str(self.path[0]).split(".")
-        if fileext != "dbc":
-            self.msg.setWindowTitle("Error")
-            self.msg.setText("Not a DBC file")
-            self.msg.setIcon(QMessageBox.Critical)
-            x = self.msg.exec_()
-            return None
+        try:
+            filename, fileext = str(self.path[0]).split(".")
+
+            if fileext != "dbc":
+                self.msg.setWindowTitle("Error")
+                self.msg.setText("Not a DBC file")
+                self.msg.setIcon(QMessageBox.Critical)
+                x = self.msg.exec_()
+                return None
+        except:
+            return  None
 
         # print(path[0])
         try:
@@ -71,13 +76,14 @@ class UIhandler():
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     mainwindow = QtWidgets.QMainWindow()
+    mainwindow.setWindowIcon(QtGui.QIcon("Ui_files/Ui_pics/icons8.png"))
     dui = dbcui()
     uihandler = UIhandler()
 
     dui.setupUi(mainwindow)
     dui.actionOpen.triggered.connect(uihandler.openbutton)
     dui.backmenubutton.clicked.connect(uihandler.backbutton)
-    dui.MessagelistWidget.itemClicked.connect(uihandler.itemselected)
+    dui.MessagelistWidget.itemClicked.connect(uihandler.messageselected)
     dui.actionNew.triggered.connect(lambda: uihandler.newimplementation("New Dbc"))
     dui.actionSave.triggered.connect(lambda: uihandler.newimplementation("Save Dbc"))
     dui.actionCopy.triggered.connect(lambda: uihandler.newimplementation("Copy Dbc"))
