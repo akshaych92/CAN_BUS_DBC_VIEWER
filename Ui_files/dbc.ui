@@ -81,8 +81,8 @@
      <widget class="QPushButton" name="backmenubutton">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>470</y>
+        <x>220</x>
+        <y>500</y>
         <width>191</width>
         <height>51</height>
        </rect>
@@ -180,6 +180,70 @@
       </property>
       <property name="text">
        <string>Signal List</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="AddMessage">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>460</y>
+        <width>101</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Add Message</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="DelMessage">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>460</y>
+        <width>101</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Del Message</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="AddSignal">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>460</y>
+        <width>101</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Add Signal</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="DelSignal">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>460</y>
+        <width>101</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Del Signal</string>
       </property>
      </widget>
     </widget>
