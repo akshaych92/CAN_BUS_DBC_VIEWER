@@ -1,4 +1,5 @@
 from PyQt5 import QtWidgets
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QMessageBox
 from Ui_files.dbc import Ui_MainWindow as dbcui
 from PyQt5 import QtGui
@@ -44,11 +45,11 @@ class UIhandler():
                 x = self.msg.exec_()
                 return None
         except:
-            return  None
+            return None
 
         # print(path[0])
         try:
-            self.db = cantools.database.load_file(self.path[0])
+            self.db = cantools.db.load_file(self.path[0])
             self.messages = self.db.messages
             dui.stackedWidget.setCurrentWidget(dui.viewerpage)
             self.namelist = []
@@ -72,11 +73,32 @@ class UIhandler():
         self.msg.setIcon(QMessageBox.Information)
         x = self.msg.exec_()
 
+    def dragEnterEvent(self, event):
+        if event.mimeData().hasUrls:
+            event.accept()
+        else:
+            event.ignore()
+
+    def dragMoveEvent(self, event):
+        if event.mimeData().hasUrls():
+            event.setDropAction(Qt.CopyAction)
+            event.accept()
+        else:
+            event.ignore()
+
+    def dropEvent(self, event):
+        if event.mimeData().hasUrls():
+
+            self.path = event.mimeData().urls()[0].toLocalFile()
+            print(self.path)
+            event.accept()
+
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     mainwindow = QtWidgets.QMainWindow()
     mainwindow.setWindowIcon(QtGui.QIcon("Ui_files/Ui_pics/icons8.png"))
+    mainwindow.setAcceptDrops(True)
     dui = dbcui()
     uihandler = UIhandler()
 
