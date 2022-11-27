@@ -16,12 +16,16 @@ class UIhandler():
         self.signal_selected = ""
         self.message_selected = ""
         self.message_clicked = ""
+        self.message_id_selected = ""
+        self.signallist = ""
 
     def messageselected(self, item: cantools.db.Message):
         self.message_clicked = item
         message_name, id = str(item.text()).split(" ")
+        self.message_id_selected = id
         row = 0
-        messagesignals = self.db.get_message_by_name(message_name)
+        messagesignals = self.db.get_message_by_name(str(message_name))
+        self.signallist = messagesignals.signals
         dui.SignaltableWidget.setRowCount(len(messagesignals.signals))
         for i in messagesignals.signals:
             dui.SignaltableWidget.setItem(row, 0, QtWidgets.QTableWidgetItem(str(i.name)))
@@ -105,6 +109,47 @@ class UIhandler():
             x = self.msg.exec_()
             return None
 
+    def addmessage(self):
+        dui.stackedWidget.setCurrentWidget(dui.Addsignalmessagepage)
+
+    def okbutton(self):
+        addsig = cantools.db.Signal(name=dui.SignalName.text(),
+                                    start=int(dui.SignalStartByte.text()),
+                                    length=int(dui.SignalLength.text()),
+                                    scale=int(dui.SignalScale.text()),
+                                    offset=int(dui.SignalOffset.text()),
+                                    unit=dui.SignalUnit.text())
+        addmessage = cantools.db.Message(frame_id= int(dui.MessageId.text()),
+                                         name=dui.Messagename.text(),
+                                         signals=[addsig],
+                                         length=int(dui.MessageLength.text()),
+                                         is_extended_frame=False)
+        self.db.messages.append(addmessage)
+        self.db.refresh()
+        dui.stackedWidget.setCurrentWidget(dui.viewerpage)
+        self.displaymessaages()
+
+    def addsignal(self):
+        dui.stackedWidget.setCurrentWidget(dui.Addsignalpage)
+
+    def signalokbutton(self):
+        addsig = cantools.db.Signal(name=dui.AddSignalName.text(),
+                                    start=int(dui.AddSignalStartByte.text()),
+                                    length=int(dui.AddSignalLength.text()),
+                                    scale=int(dui.AddSignalScale.text()),
+                                    offset=int(dui.AddSignalOffset.text()),
+                                    unit=dui.AddSignalUnit.text())
+
+        self.signallist.append(addsig)
+        self.messages[self.message_selected].length += 1
+        self.db.refresh()
+        dui.stackedWidget.setCurrentWidget(dui.viewerpage)
+        self.displaymessaages()
+
+
+
+
+
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
@@ -116,6 +161,7 @@ if __name__ == '__main__':
     dui.setupUi(mainwindow)
     dui.actionOpen.triggered.connect(uihandler.openbutton)
     dui.backmenubutton.clicked.connect(uihandler.backbutton)
+    dui.Okbutton.clicked.connect(uihandler.okbutton)
     dui.MessagelistWidget.itemClicked.connect(uihandler.messageselected)
     dui.actionNew.triggered.connect(lambda: uihandler.newimplementation("New Dbc"))
     dui.actionSave.triggered.connect(uihandler.savedbc)
@@ -126,6 +172,10 @@ if __name__ == '__main__':
 
     dui.DelMessage.clicked.connect(uihandler.deletemessage)
     dui.DelSignal.clicked.connect(uihandler.deletesignal)
+    dui.AddMessage.clicked.connect(uihandler.addmessage)
+
+    dui.AddSignal.clicked.connect(uihandler.addsignal)
+    dui.AddSignalOkbutton.clicked.connect(uihandler.signalokbutton)
 
     mainwindow.show()
     sys.exit(app.exec_())
