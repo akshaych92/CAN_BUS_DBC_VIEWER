@@ -77,12 +77,483 @@
       </property>
      </widget>
     </widget>
+    <widget class="QWidget" name="Addsignalmessagepage">
+     <widget class="QLineEdit" name="Messagename">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>50</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LablelMessageName">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>50</y>
+        <width>104</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Message Name</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LablelMessageId">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>110</y>
+        <width>104</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Message ID</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="MessageId">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>100</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelSignalName">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>50</y>
+        <width>104</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Signal Name</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="SignalName">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>50</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelSignalStartByte">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>110</y>
+        <width>121</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Signal Start Bit</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="SignalStartByte">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>110</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelSignalLength">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>170</y>
+        <width>121</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Length</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="SignalLength">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>170</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelSignalScale">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>230</y>
+        <width>121</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Scale</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelSignalOffset">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>290</y>
+        <width>121</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Offset</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelSignalUint">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>350</y>
+        <width>121</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Unit</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="SignalScale">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>230</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="SignalOffset">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>290</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="SignalUnit">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>350</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Okbutton">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>470</y>
+        <width>89</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>OK</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LablelMessageLength">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>170</y>
+        <width>121</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Message Length</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="MessageLength">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>170</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Addsignalpage">
+     <widget class="QLabel" name="LabelAddSignalName">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>50</y>
+        <width>104</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Signal Name</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="AddSignalName">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>50</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelAddSignalStartByte">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>110</y>
+        <width>121</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Signal Start Bit</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="AddSignalStartByte">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>110</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelAddSignalLength">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>170</y>
+        <width>121</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Length</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="AddSignalLength">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>170</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelAddSignalScale">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>230</y>
+        <width>121</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Scale</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelAddSignalOffset">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>290</y>
+        <width>121</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Offset</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelAddSignalUint">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>350</y>
+        <width>121</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Unit</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="AddSignalScale">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>230</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="AddSignalOffset">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>290</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="AddSignalUnit">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>350</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="AddSignalOkbutton">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>470</y>
+        <width>89</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>OK</string>
+      </property>
+     </widget>
+    </widget>
     <widget class="QWidget" name="viewerpage">
      <widget class="QPushButton" name="backmenubutton">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>470</y>
+        <x>220</x>
+        <y>500</y>
         <width>191</width>
         <height>51</height>
        </rect>
@@ -180,6 +651,70 @@
       </property>
       <property name="text">
        <string>Signal List</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="AddMessage">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>460</y>
+        <width>101</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Add Message</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="DelMessage">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>460</y>
+        <width>101</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Del Message</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="AddSignal">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>460</y>
+        <width>101</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Add Signal</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="DelSignal">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>460</y>
+        <width>101</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Del Signal</string>
       </property>
      </widget>
     </widget>
